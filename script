@@ -1,0 +1,22 @@
+ubuntu:
+======
+
+#!/bin/bash
+
+apt update -y
+apt install apache2 -y
+service apache2 start
+systemctl enable apache2
+cd /var/www/html
+echo "<html><h1> I have a httpd web page on AWS </h1></html>" >> index.html
+
+Amazon linux:
+=============
+#!/bin/bash
+
+yum update -y
+yum install httpd -y
+service httpd start
+systemctl enable httpd
+cd /var/www/html
+echo "<html><h1> I have a httpd web page on AWS </h1></html>" >> index.html
